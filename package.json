@@ -1,0 +1,42 @@
+{
+  "name": "@speck-agency/web-ui",
+  "version": "0.7.0",
+  "description": "",
+  "main": "build/components/index.js",
+  "scripts": {
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "clean": "node ./scripts/clean-build",
+    "transpile": "babel src -d build",
+    "copy": "node ./scripts/copy-src",
+    "build": "npm-run-all -s clean transpile copy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speck-agency/web-ui.git"
+  },
+  "author": "hello@speck.agency.",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.0.0",
+    "classnames": "2.2.5",
+    "prop-types": "15.6.1",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-toastify": "3.3.4",
+    "react-toggle": "4.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-react": "6.24.1",
+    "fs-extra": "5.0.0",
+    "npm-run-all": "4.1.2",
+    "react-styleguidist": "6.2.7",
+    "webpack": "3.6.0"
+  }
+}

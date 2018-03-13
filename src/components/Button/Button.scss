@@ -1,0 +1,41 @@
+$Button-default-bg-color: $white !default;
+$Button-default-border-color:  $gray-600 !default;
+
+$Button-primary-color: $red !default;
+
+$Button-outline-primary-color: $red !default;
+
+$Button-secondary-bg-color: $gray-600 !default;
+$Button-secondary-border-color:  $gray-600 !default;
+
+$Button-outline-secondary-color: $gray-600 !default;
+
+$Button-success-bg-color: $green !default;
+$Button-success-border-color: $green !default;
+
+$Button-danger-bg-color: $red !default;
+$Button-danger-border-color: $red !default;
+
+.Button {
+  &-default {
+    @include button-variant($Button-default-bg-color, $Button-default-border-color);
+  }
+  &-primary {
+    @include button-outline-variant($Button-primary-color);
+  }
+  &-outline-primary {
+    @include button-outline-variant($Button-outline-primary-color);
+  }
+  &-secondary {
+    @include button-variant($Button-secondary-bg-color, $Button-secondary-border-color);
+  }
+  &-outline-secondary {
+    @include button-outline-variant($Button-outline-secondary-color);
+  }
+  &-success {
+    @include button-variant($Button-success-bg-color, $Button-success-border-color);
+  }
+  &-danger {
+    @include button-variant($Button-danger-bg-color, $Button-danger-border-color);
+  }
+}

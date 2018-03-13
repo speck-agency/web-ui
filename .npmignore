@@ -1,0 +1,10 @@
+docs
+node_modules
+src
+scripts
+styleguide
+.babelrc
+.gitignore
+.npmignore
+.npmrc
+.idea

@@ -1,0 +1,33 @@
+$SideNavLink-bg-color: $gray-100 !default;
+$SideNavLink-color: $gray-900 !default;
+$SideNavLink-active-bg-color: $gray-300 !default;
+$SideNavLink-active-color: $gray-900 !default;
+$SideNavLink-hover-bg-color: $gray-200 !default;
+$SideNavLink-hover-color: $gray-200 !default;
+$SideNavLink-font-size: 0.9375rem !default;
+
+.SideNavLink {
+  display: block;
+  transition: .2s;
+  text-decoration: none;
+  cursor: pointer;
+  padding: map_get($spacers, 3);
+  color: $SideNavLink-color;
+  background-color: $SideNavLink-bg-color;
+  font-size: $SideNavLink-font-size;
+
+  &:hover {
+    background-color: $SideNavLink-hover-bg-color;
+    color: $SideNavLink-color;
+  }
+
+  &--active {
+    background-color: $SideNavLink-active-bg-color;
+    color: $SideNavLink-active-color;
+
+    &:hover {
+      background-color: $SideNavLink-active-bg-color;
+      color: $SideNavLink-color;
+    }
+  }
+}

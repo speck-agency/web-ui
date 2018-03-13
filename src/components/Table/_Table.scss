@@ -1,0 +1,83 @@
+$Tr--hover-bg-color: $table-hover-bg !default;
+
+$Th-color: theme-color("secondary") !default;
+$Th-font-size: (12rem / 16) !default;
+$Td-font-size: (13rem / 16) !default;
+
+$Td--active-bg-color: $table-active-bg;
+$Td--disabled-bg-color: $table-active-bg;
+
+$Table--master-col-max-width: 25vw;
+$Table-bg-color: $white !default;
+
+.Table__container {
+  flex: 1 1 auto;
+  overflow: auto;
+  background-color: $Table-bg-color;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+}
+
+.Table {
+  background-color: $Table-bg-color;
+}
+
+.Table--master .Td--master,
+.Table--master .Th--master {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: $Table--master-col-max-width;
+}
+
+.Table--master .Td--master:last-child,
+.Table--master .Th--master:last-child {
+  padding-right: 50px;
+}
+
+.Table--master .Td:not(.Td--master),
+.Table--master .Th:not(.Th--master) {
+  display: none;
+}
+
+@include media-breakpoint-down(sm) {
+  .Table--master {
+    display: none;
+  }
+}
+
+.TdCheckbox {
+
+}
+
+.Th {
+  white-space: nowrap;
+  font-size: $Th-font-size;
+  color: $Th-color;
+}
+
+.Td {
+  white-space: nowrap;
+  font-size: $Td-font-size;
+}
+
+.TdActionGroup {
+  padding: 0;
+}
+
+.TdInput {
+  text-align: center;
+}
+
+.Tr--active {
+  background-color: $Td--active-bg-color;
+}
+
+.Tr--disabled {
+  background-color: $Td--disabled-bg-color;
+}
+
+.Tr--hover {
+  @include hover {
+    background-color: $Tr--hover-bg-color;
+  }
+}

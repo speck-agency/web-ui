@@ -1,0 +1,10 @@
+$PageHeader-bg-color: $gray-800 !default;
+
+.PageHeader {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: $PageHeader-bg-color;
+  //  TODO: p-md-2
+}

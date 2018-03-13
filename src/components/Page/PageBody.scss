@@ -1,0 +1,7 @@
+$PageBody-bg-color: $gray-100 !default;
+
+.PageBody {
+  flex: 1 1 auto;
+  display: flex;
+  background-color: $PageBody-bg-color;
+}

@@ -1,0 +1,12 @@
+$ContentCanvas-bg-color: $gray-100;
+
+.ContentCanvas {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: $ContentCanvas-bg-color;
+  // Contain LoadingOverlay which is absolutely positioned.
+  // TODO: Luka - make separate class only for this case
+  position: relative;
+}
