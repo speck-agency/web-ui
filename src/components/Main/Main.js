@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+/**
+ * Main content container.
+ */
 const Main = props => (
   <div
     className={classNames('Main d-flex flex-column', {
-      'flex-1-0-auto': !props.collapse,
-      'flex-0-0-auto': props.collapse,
+      'Main--collapsed': props.collapse,
       'px-3': !props.noPaddingX,
     })}
     style={{
@@ -19,7 +21,13 @@ const Main = props => (
 );
 
 Main.propTypes = {
-  // Will not flex-grow vertically. Useful for nesting of multiple Main components.
+  children: PropTypes.node,
+  /**
+   * Will not flex-grow vertically. Useful for nesting of multiple Main components.
+   *
+   * TODO: Luka - create shared logic for layout components
+   * @ignore
+   */
   collapse: PropTypes.bool,
   // No horizontal padding.
   // noPaddingX: PropTypes.bool,

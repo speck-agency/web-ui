@@ -9,25 +9,48 @@ class ToastCloseButton extends React.Component {
   }
 }
 
+/**
+ * Wrapper for [react-toastify](https://fkhadra.github.io/react-toastify/) library that will
+ * dispatch new toast on each id prop change.
+ *
+ * Default props are the ones used in the VPS app, so for each toast you only need to define
+ * id, body and type.
+ *
+ * In the VPS app we've connected ToastFactory to redux so we can dispatch toasts with actions.
+ *
+ * But if this pattern doesn't suit you, use react-toastify directly or some other libary :)
+ */
 class ToastFactory extends React.Component {
   static propTypes = {
-    // Unique toast id.
-    // Each time this prop changes, a new toast will be created with the current props.
+    /**
+     * Unique toast id.
+     * Each time this prop changes, a new toast will be created with the current props.
+     */
     id: PropTypes.string,
     body: PropTypes.object,
     type: PropTypes.oneOf(['success', 'error', 'warn', 'info', 'default']),
     position: PropTypes.oneOf([
       'top-right', 'top-center', 'top-left', 'bottom-right', 'bottom-center', 'bottom-left'
     ]),
+    /**
+     * How long the toast will be visible.
+     */
     autoClose: PropTypes.number,
-    // A React Component to replace the default close button or false to hide the button
-    closeButton: PropTypes.element,
-    // Display or not the progress bar below the toast(remaining time)
+    /**
+     * Display or not the progress bar below the toast(remaining time).
+     */
     hideProgressBar: PropTypes.bool,
-    // Keep the timer running or not on hover
+    /**
+     * Keep the timer running or not on hover.
+     */
     pauseOnHover: PropTypes.bool,
+    /**
+     * Immediately close toast on click.
+     */
     closeOnClick: PropTypes.bool,
-    // Display newest toast on top
+    /**
+     * Display newest toast on top.
+     */
     newestOnTop: PropTypes.bool,
   };
 
@@ -35,7 +58,6 @@ class ToastFactory extends React.Component {
     type: 'default',
     position: 'bottom-right',
     autoClose: 8000,
-    closeButton: <ToastCloseButton />,
     hideProgressBar: true,
     pauseOnHover: true,
     closeOnClick: true,
@@ -86,7 +108,7 @@ class ToastFactory extends React.Component {
       <ToastContainer
         position={this.props.position}
         autoClose={this.props.autoClose}
-        closeButton={this.props.closeButton}
+        closeButton={<ToastCloseButton />}
         hideProgressBar={this.props.hideProgressBar}
         pauseOnHover={this.props.pauseOnHover}
         closeOnClick={this.props.closeOnClick}

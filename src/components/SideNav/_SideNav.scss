@@ -16,7 +16,7 @@ $SideNav__overlay-z-index: 1080 !default;
   padding: map_get($spacers, 3),
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .SideNav {
     height: 100%;
     top: 0;
@@ -51,7 +51,7 @@ $SideNav__overlay-z-index: 1080 !default;
   }
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   .SideNav {
     border-right: 1px solid #ccc;
     position: static;

@@ -12,9 +12,9 @@ const Tr = (props) => {
   return (
     <tr
       className={classNames('Tr', {
-        'Tr--active': props.isActive,
-        'Tr--disabled': props.isDisabled,
-        'Tr--hover': props.hasHover,
+        'Tr--active': props.active,
+        'Tr--disabled': props.disabled,
+        'Tr--hover': props.hover,
       })}
       onClick={props.onClick}
       style={{
@@ -27,9 +27,9 @@ const Tr = (props) => {
 };
 
 Tr.propTypes = {
-  isActive: PropTypes.bool,
-  isDisabled: PropTypes.bool,
-  hasHover: PropTypes.bool,
+  active: PropTypes.bool,
+  disabled: PropTypes.bool,
+  hover: PropTypes.bool,
   onClick: PropTypes.func,
 };
 

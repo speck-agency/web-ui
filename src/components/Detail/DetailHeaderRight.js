@@ -1,14 +1,16 @@
 import React from 'react';
-import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-class DetailHeaderRight extends React.Component {
-  render() {
-    return (
-      <div className="d-flex align-items-center justify-content-end  ml-auto">
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const DetailHeaderRight = (props) => {
+  return (
+    <div className="d-flex align-items-center justify-content-end  ml-auto">
+      {props.children}
+    </div>
+  );
+};
+
+DetailHeaderRight.propTypes = {
+  children: PropTypes.node,
+};
 
 export default DetailHeaderRight;

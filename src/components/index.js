@@ -13,6 +13,8 @@ export { default as DetailHeaderRight } from './Detail/DetailHeaderRight';
 export { default as DetailTitle } from './Detail/DetailTitle';
 export { default as DetailFooter } from './Detail/DetailFooter';
 
+export { default as Icon } from './Icon/Icon';
+
 export { default as InputCheckbox } from './Input/InputCheckbox';
 export { default as InputRadio } from './Input/InputRadio';
 
@@ -32,6 +34,7 @@ export { default as ModalTitle } from './Modal/ModalTitle';
 export { default as Page } from './Page/Page';
 export { default as PageBody } from './Page/PageBody';
 export { default as PageHeader } from './Page/PageHeader';
+export { default as PageHeaderLink } from './Page/PageHeaderLink';
 
 export { default as PaginationGroup } from './Pagination/PaginationGroup';
 export { default as PaginationLimit } from './Pagination/PaginationLimit';

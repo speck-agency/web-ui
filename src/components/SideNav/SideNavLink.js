@@ -1,17 +1,58 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const SideNavLink = (props) => {
+const PlainLink = (props) => {
+  const { activeClassName, ...rest } = props;
+
   return (
-    <div
-      className={classNames('SideNavLink', {
-        'SideNavLink--active': props.isActive,
-      })}
-      onClick={props.onClick}
+    <a {...rest} />
+  );
+};
+
+const SideNavLink = (props) => {
+  const {
+    linkComponent,
+    linkProps,
+  } = props;
+
+  const {
+    className,
+    activeClassName,
+    ...otherLinkProps
+  } = linkProps;
+
+  return (
+    <props.linkComponent
+      className={classNames('SideNavLink', className)}
+      activeClassName={
+        linkProps.href ? undefined : classNames('SideNavLink--active', activeClassName)
+      }
+      {...otherLinkProps}
     >
       {props.children}
-    </div>
+    </props.linkComponent>
   );
+};
+
+SideNavLink.propTypes = {
+  children: PropTypes.node,
+  /**
+   * Component used for rendering link.
+   */
+  linkComponent: PropTypes.func,
+  /**
+   * Props that will be passed to linkComponent.
+   */
+  linkProps: PropTypes.object,
+};
+
+SideNavLink.defaultProps = {
+  linkComponent: PlainLink,
+  linkProps: {
+    className: '',
+    activeClassName: '',
+  },
 };
 
 export default SideNavLink;

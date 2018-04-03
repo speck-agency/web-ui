@@ -3,7 +3,13 @@
 //
 // See: https://react-styleguidist.js.org/docs/webpack.html
 
+// const path = require('path');
+
 module.exports = {
+  // alias: {
+  //   // Styleguide examples should be copy/pasteable into the project.
+  //   '@speck-agency/web-ui': path.resolve(__dirname, 'src/components/'),
+  // },
   module: {
     loaders: [
       {

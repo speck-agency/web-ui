@@ -1,0 +1,7 @@
+.Main {
+  flex: 1 0 auto;
+
+  &--collapsed {
+    flex: 0 0 auto;
+  }
+}

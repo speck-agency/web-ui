@@ -1,9 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const TBody = props => (
+const Tbody = props => (
   <tbody>
     {props.children}
   </tbody>
 );
 
-export default TBody;
+Tbody.propTypes = {
+  children: PropTypes.node,
+};
+
+export default Tbody;

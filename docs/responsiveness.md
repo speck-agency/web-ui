@@ -1,0 +1,1 @@
+- Responsiveness: objasniti kako napraviti mobile header, odnosno objasniti zašto smo se odlučili na takve varijante.

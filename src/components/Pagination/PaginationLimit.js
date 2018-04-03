@@ -16,7 +16,9 @@ class PaginationLimit extends React.Component {
     // Select limit options.
     limitOptions: PropTypes.arrayOf(numberOrStringType),
     rowsPerPageLabel: PropTypes.node,
-    // Params - { limit: number }
+    /**
+     * @param {number} limit
+     */
     onChange: PropTypes.func.isRequired,
   };
 
@@ -24,15 +26,15 @@ class PaginationLimit extends React.Component {
     limit: '',
     limitOptions: [10, 20, 50, 100],
     rowsPerPageLabel: 'Rows per page:',
-    onChange: ({ limit }) => ({ limit }),
+    onChange: limit => limit,
   };
 
   getLimit = () => parseIntOr(0, this.props.limit);
 
   handleLimitChange = (e) => {
-    this.props.onChange({
-      limit: parseInt(e.target.value, 10),
-    });
+    this.props.onChange(
+      parseInt(e.target.value, 10),
+    );
   };
 
   render() {

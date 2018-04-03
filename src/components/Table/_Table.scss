@@ -16,6 +16,14 @@ $Table-bg-color: $white !default;
   background-color: $Table-bg-color;
   border: $border-width solid $border-color;
   border-radius: $border-radius;
+
+  &--master {
+    max-width: 180px;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
 }
 
 .Table {
@@ -37,16 +45,6 @@ $Table-bg-color: $white !default;
 .Table--master .Td:not(.Td--master),
 .Table--master .Th:not(.Th--master) {
   display: none;
-}
-
-@include media-breakpoint-down(sm) {
-  .Table--master {
-    display: none;
-  }
-}
-
-.TdCheckbox {
-
 }
 
 .Th {

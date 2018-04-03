@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const MainFooter = props => (
   <div
     className={classNames(
-      'MainFooter flex-0-0-auto d-flex',
+      'MainFooter d-flex',
       props.children ? 'py-3' : 'pb-3',
       props.justifyContentEnd && 'justify-content-end',
     )}
@@ -15,13 +15,16 @@ const MainFooter = props => (
 );
 
 MainFooter.propTypes = {
-  children: PropTypes.object,
-  // justifyContentEnd: PropTypes.bool,
+  children: PropTypes.node,
+  /**
+   * TODO: Luka - create shared logic for layout components
+   * @ignore
+   */
+  justifyContentEnd: PropTypes.bool,
 };
 
 MainFooter.defaultProps = {
-  children: undefined,
-  // justifyContentEnd: false,
+  justifyContentEnd: false,
 };
 
 export default MainFooter;

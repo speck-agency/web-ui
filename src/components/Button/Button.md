@@ -1,29 +1,20 @@
-React component example:
+Examples:
 
 ```js
-<Button size="large">Push Me</Button>
+<Button
+  color="success"
+  variant="outline"
+>
+  Success outline button
+</Button>
 ```
 
-You can add a custom props to an example wrapper:
-
-```js { "props": { "className": "checks" } }
-<Button>I’m transparent!</Button>
-```
-
-Or disable an editor by passing a `noeditor` modifier:
-
-```jsx noeditor
-<Button>Push Me</Button>
-```
-
-To render an example as highlighted source code add a `static` modifier:
-
-```jsx static
-import React from 'react';
-```
-
-Examples with all other languages are rendered only as highlighted source code, not an actual component:
-
-```html
-<Button size="large">Push Me</Button>
+```js
+<Button
+  disabled
+  size="small"
+  title="Buy"
+>
+  Primary small button
+</Button>
 ```

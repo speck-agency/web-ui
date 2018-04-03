@@ -8,8 +8,7 @@ $SideNavLink-font-size: 0.9375rem !default;
 
 .SideNavLink {
   display: block;
-  transition: .2s;
-  text-decoration: none;
+  transition: .1s;
   cursor: pointer;
   padding: map_get($spacers, 3);
   color: $SideNavLink-color;
@@ -17,6 +16,7 @@ $SideNavLink-font-size: 0.9375rem !default;
   font-size: $SideNavLink-font-size;
 
   &:hover {
+    text-decoration: none;
     background-color: $SideNavLink-hover-bg-color;
     color: $SideNavLink-color;
   }

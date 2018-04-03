@@ -12,12 +12,16 @@ const numberOrStringType = PropTypes.oneOfType([PropTypes.number, PropTypes.stri
 
 class PaginationOffset extends React.Component {
   static propTypes = {
-    // Starts from 1.
+    /**
+     * Starts from 1.
+     */
     count: numberOrStringType,
     limit: numberOrStringType,
     offset: numberOrStringType,
     offsetOfCountLabel: PropTypes.node,
-    // Params - { limit: number }
+    /**
+     * @param {number} offset
+     */
     onChange: PropTypes.func.isRequired,
   };
 
@@ -26,7 +30,7 @@ class PaginationOffset extends React.Component {
     limit: '',
     offset: '',
     offsetOfCountLabel: 'of',
-    onChange: ({ offset }) => ({ offset }),
+    onChange: offset => offset,
   };
 
   getCount = () => parseIntOr(0, this.props.count);
@@ -43,7 +47,7 @@ class PaginationOffset extends React.Component {
 
     const offset = (prevOffset < prevLimit) ? 0 : (prevOffset - prevLimit);
 
-    this.props.onChange({ offset });
+    this.props.onChange(offset);
   };
 
   handleIncreaseOffset = () => {
@@ -54,7 +58,7 @@ class PaginationOffset extends React.Component {
 
     const offset = prevOffset + prevLimit;
 
-    this.props.onChange({ offset });
+    this.props.onChange(offset);
   };
 
   render() {

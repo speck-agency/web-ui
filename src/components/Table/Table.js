@@ -3,33 +3,45 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Table = (props) => {
+  const {
+    className,
+    isMaster,
+    hasBorder,
+    children,
+    ...rest
+  } = props;
+
   return (
     <div
-      className={classNames('Table__container', {
-        'b-0': !props.hasBorder,
+      className={classNames('Table__container', className, {
+        'Table__container--master': isMaster,
+        'b-0': !hasBorder,
       })}
     >
       <table
-        id={props.id}
+        {...rest}
         className={classNames('Table table m-0', {
-          'Table--master': props.isMaster,
+          'Table--master':isMaster,
         })}
       >
-        {props.children}
+        {children}
       </table>
     </div>
   );
 };
 
 Table.propTypes = {
-  id: PropTypes.string,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  /**
+   * Is in master-detail view mode.
+   * Has max-width and only td/th with isMaster prop set to true are visible.
+   */
   isMaster: PropTypes.bool,
   hasBorder: PropTypes.bool,
 };
 
 Table.defaultProps = {
-  // Is in master-detail view mode.
-  // Has max-width and only td/th with isMaster prop set to true are visible.
   isMaster: false,
   hasBorder: true,
 };

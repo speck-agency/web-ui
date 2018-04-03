@@ -1,10 +1,14 @@
 $PageHeader-bg-color: $gray-800 !default;
 
 .PageHeader {
-  flex: none;
   display: flex;
-  flex-wrap: wrap;
+  overflow: hidden;
+  flex: none;
   align-items: center;
   background-color: $PageHeader-bg-color;
-  //  TODO: p-md-2
+
+  @include media-breakpoint-up(lg) {
+    flex-wrap: wrap;
+    padding: map_get($spacers, 2);
+  }
 }

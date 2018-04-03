@@ -1,6 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const Th = props => (
   <th
@@ -15,11 +15,13 @@ const Th = props => (
 );
 
 Th.propTypes = {
+  /**
+   * Is visible when Table.isMaster prop is set to true.
+   */
   isMaster: PropTypes.bool,
 };
 
 Th.defaultProps = {
-  // Is visible in master-detail view.
   isMaster: false,
 };
 

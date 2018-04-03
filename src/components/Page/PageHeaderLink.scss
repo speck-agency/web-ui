@@ -1,0 +1,82 @@
+$PageHeaderLink-color: $gray-200 !default;
+$PageHeaderLink-color-md: $gray-300 !default;
+
+$PageHeaderLink-active-bg-color: $red !default;
+
+$PageHeaderLink-active-color: $gray-200 !default;
+$PageHeaderLink-active-color-md: $gray-500 !default;
+
+$PageHeaderLink-bg-color: $gray-900 !default;
+$PageHeaderLink-bg-color-md: rgba(0, 0, 0, 0) !default;
+
+.PageHeaderLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .1s;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    flex: 1 0 auto;
+    height: 3rem;
+    color: $PageHeaderLink-color;
+    background-color: $PageHeaderLink-bg-color;
+
+    &:hover {
+      color: $PageHeaderLink-color;
+    }
+
+    &--active {
+      color: $PageHeaderLink-active-color;
+      background-color: $PageHeaderLink-active-bg-color;
+    }
+
+    &--disabled {
+      opacity: .40;
+      cursor: default;
+    }
+
+    // Hide text only if icon is defined
+    &__text:not(:only-child) {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex: none;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0);
+    color: $PageHeaderLink-color-md;
+    background-color: $PageHeaderLink-bg-color-md;
+
+    &:hover {
+      color: $PageHeaderLink-active-color-md;
+    }
+
+    &--active {
+      border-bottom-color: inherit;
+      color: $PageHeaderLink-active-color-md;
+    }
+
+    &--disabled {
+      opacity: .40;
+
+      &:hover {
+        color: $PageHeaderLink-color-md;
+      }
+    }
+
+    &__text {
+      font-size: (15rem / 16);
+    }
+
+    &__text--with-icon {
+      font-size: (11rem / 16);
+      letter-spacing: .27px;
+      font-weight: 300;
+    }
+  }
+}

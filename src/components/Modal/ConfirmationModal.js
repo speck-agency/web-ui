@@ -14,14 +14,21 @@ import {
 class ConfirmationModal extends React.Component {
   static propTypes = {
     isOpen: PropTypes.bool,
-    // Call onCancel when user clicks on the overlay?
+    /**
+     * Call onCancel when user clicks on the overlay?
+     */
     shouldCloseOnOverlayClick: PropTypes.bool,
     headerTitleChildren: PropTypes.node,
     bodyChildren: PropTypes.node,
     buttonCancelChildren: PropTypes.node,
     buttonConfirmChildren: PropTypes.node,
-    // Handle click on buttonCancel, buttonClose or modal overlay.
+    /**
+     * Handle click on cancel button, close button or modal overlay.
+     */
     onCancel: PropTypes.func.isRequired,
+    /**
+     * Handle click on confirm button.
+     */
     onConfirm: PropTypes.func.isRequired,
   };
 
@@ -53,13 +60,13 @@ class ConfirmationModal extends React.Component {
         </ModalBody>
         <ModalFooter>
           <Button
-            variant="default"
+            color="secondary"
             onClick={this.props.onCancel}
           >
             {this.props.buttonCancelChildren}
           </Button>
           <Button
-            variant="primary"
+            color="primary"
             onClick={this.props.onConfirm}
           >
             {this.props.buttonConfirmChildren}

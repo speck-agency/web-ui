@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const MainHeader = (props) => {
@@ -7,6 +8,7 @@ const MainHeader = (props) => {
     paddingTopNone,
   } = props;
 
+  // TODO: Luka - this is not good way to do this. Main should have custom padding prop.
   const getPaddingTopClassName = () => {
     if (paddingTopNone) return '';
     if (children) return 'pt-4';
@@ -21,7 +23,7 @@ const MainHeader = (props) => {
   return (
     <div
       className={classNames(
-        'MainHeader flex-0-0-auto d-flex flex-wrap align-items-center',
+        'MainHeader d-flex flex-wrap align-items-center',
         getPaddingTopClassName(),
         getPaddingBottomClassName(),
       )}
@@ -29,6 +31,10 @@ const MainHeader = (props) => {
       {children}
     </div>
   );
+};
+
+MainHeader.propTypes = {
+  children: PropTypes.node,
 };
 
 export default MainHeader;

@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 
 class PaginationGroup extends React.Component {
   static propTypes = {
+    /**
+     * PaginationLimit React element.
+     */
     paginationLimit: PropTypes.node,
+    /**
+     * PaginationOffset React element.
+     */
     paginationOffset: PropTypes.node,
   };
 

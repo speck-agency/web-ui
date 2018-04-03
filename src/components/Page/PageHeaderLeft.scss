@@ -1,0 +1,8 @@
+.PageHeaderLeft {
+  flex: 1 0 auto;
+
+  @include media-breakpoint-up(lg) {
+    flex-wrap: wrap;
+    padding: map_get($spacers, 2);
+  }
+}

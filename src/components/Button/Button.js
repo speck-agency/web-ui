@@ -5,34 +5,19 @@ import classNames from 'classnames';
 const Button = props => {
   const getSizeClass = () => {
     switch (props.size) {
-      case 'sm':
+      case 'small':
         return 'btn-sm';
-      case 'lg':
-        return 'btn-lg';
+      case 'medium':
+        return 'btn-md';
       default:
         return props.size;
     }
   };
 
   const getVariantClass = () => {
-    switch (props.variant) {
-      case 'default':
-        return 'Button-default';
-      case 'primary':
-        return 'Button-primary';
-      case 'secondary':
-        return 'Button-secondary';
-      case 'success':
-        return 'Button-success';
-      case 'danger':
-        return 'Button-danger';
-      case 'outline-primary':
-        return 'Button-outline-primary';
-      case 'outline-secondary':
-        return 'Button-outline-secondary';
-      default:
-        return props.variant;
-    }
+    const variant = props.variant === 'outline' ? 'outline-' : '';
+
+    return `btn-${variant}${props.color}`
   };
 
   const handleClick = e => props.onClick && props.onClick(e);
@@ -40,14 +25,9 @@ const Button = props => {
   return (
     <button
       className={classNames('btn', getSizeClass(), getVariantClass(), {
-        active: props.isActive,
-        disabled: props.isDisabled,
+        disabled: props.disabled,
       })}
       onClick={handleClick}
-      style={{
-        // TODO: Define via CSS
-        cursor: props.isDisabled ? 'not-allowed' : undefined,
-      }}
       title={props.title}
     >
       {props.children}
@@ -55,29 +35,38 @@ const Button = props => {
   );
 };
 
+/**
+ * General buttons.
+ */
 Button.propTypes = {
-  // Follows Bootstrap convention.
+  children: PropTypes.node,
   variant: PropTypes.oneOf([
     'default',
+    'outline',
+  ]),
+  size: PropTypes.oneOf(['small', 'medium']),
+  color: PropTypes.oneOf([
     'primary',
     'secondary',
     'success',
     'danger',
-    'outline-primary',
-    'outline-secondary',
   ]),
-  // Follows Bootstrap convention.
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  // isActive: PropTypes.bool,
-  isDisabled: PropTypes.bool,
+  /**
+   * Disabled button has normal cursor and is faded.
+   */
+  disabled: PropTypes.bool,
   onClick: PropTypes.func,
+  /**
+   * Title that is shown on hover.
+   */
   title: PropTypes.string,
 };
 
 Button.defaultProps = {
   variant: 'default',
-  isActive: false,
-  isDisabled: false,
+  size: 'medium',
+  color: 'primary',
+  disabled: false,
 };
 
 export default Button;

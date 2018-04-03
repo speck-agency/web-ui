@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 
 class InputCheckbox extends React.Component {
@@ -34,5 +35,12 @@ class InputCheckbox extends React.Component {
     );
   }
 }
+
+InputCheckbox.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
+};
 
 export default InputCheckbox;

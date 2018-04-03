@@ -1,0 +1,3 @@
+```js
+<Toggle checked={false} />
+```

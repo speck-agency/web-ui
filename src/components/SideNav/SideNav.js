@@ -4,33 +4,44 @@ import classNames from 'classnames';
 
 class SideNav extends React.Component {
   static propTypes = {
-    isExpanded: PropTypes.bool,
-    onIsExpandedChange: PropTypes.func,
+    /**
+     * SideNavLinks or SideNavSection.
+     */
+    children: PropTypes.node,
+    /**
+     * Is SideNav expanded below lg breakpoint (on mobile).
+     */
+    expanded: PropTypes.bool,
+    /**
+     * Function called on menu button or overlay click.
+     * First param is boolean describing the next expanded value, use it to set expanded in the parent component.
+     */
+    onExpandedChange: PropTypes.func,
   };
 
   static defaultProps = {
-    isExpanded: true,
-    onIsExpandedChange: boolean => boolean,
+    expanded: true,
+    onExpandedChange: boolean => boolean,
   };
 
   handleOverlayClick = () => {
-    this.props.onIsExpandedChange(!this.props.isExpanded);
+    this.props.onExpandedChange(!this.props.expanded);
   };
 
   handleMenuButtonClick = () => {
-    this.props.onIsExpandedChange(!this.props.isExpanded);
+    this.props.onExpandedChange(!this.props.expanded);
   };
 
   render() {
     const menuClass = classNames('SideNav', {
-      'SideNav--expanded': this.props.isExpanded,
+      'SideNav--expanded': this.props.expanded,
     });
 
     return (
       <div className="d-block">
         <div
           className={classNames('SideNav__overlay', {
-            'SideNav__overlay--visible': this.props.isExpanded,
+            'SideNav__overlay--visible': this.props.expanded,
           })}
           onClick={this.handleOverlayClick}
         />

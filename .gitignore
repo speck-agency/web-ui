@@ -1,5 +1,7 @@
 build
+drafts
 node_modules
 styleguide
 
 .idea
+.DS_Store

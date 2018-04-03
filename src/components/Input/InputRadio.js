@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 
 class InputRadio extends React.Component {
@@ -42,5 +43,13 @@ class InputRadio extends React.Component {
     );
   }
 }
+
+InputRadio.propTypes = {
+  name: PropTypes.string,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  onChange: PropTypes.func,
+};
 
 export default InputRadio;

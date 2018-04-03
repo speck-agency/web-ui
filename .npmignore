@@ -7,4 +7,8 @@ styleguide
 .gitignore
 .npmignore
 .npmrc
+.stylelintrc
+postcss.config.js
+styleguide.config.js
+styleguide.webpack.config.js
 .idea

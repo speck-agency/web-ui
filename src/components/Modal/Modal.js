@@ -10,6 +10,7 @@ import classNames from 'classnames';
 
 class Modal extends React.Component {
   static propTypes = {
+    children: PropTypes.node,
     isOpen: PropTypes.bool.isRequired,
     // By default nothing happens and click propagation is stopped. Can be used to close the modal.
     onOverlayClick: PropTypes.func,
@@ -41,7 +42,11 @@ class Modal extends React.Component {
             className="modal-dialog"
             role="document"
           >
-            <div className="modal-content">
+            <div
+              className="modal-content"
+              // Prevent onOverlayClick()
+              onClick={e => e.stopPropagation()}
+            >
               {this.props.children}
             </div>
           </div>

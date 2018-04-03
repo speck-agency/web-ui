@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SideNavHeading = (props) => {
   return (
@@ -7,6 +8,10 @@ const SideNavHeading = (props) => {
       <hr className="mt-1 mb-0" />
     </div>
   );
+};
+
+SideNavHeading.propTypes = {
+  children: PropTypes.node,
 };
 
 export default SideNavHeading;

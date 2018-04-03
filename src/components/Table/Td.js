@@ -18,11 +18,13 @@ const Td = props => (
 );
 
 Td.propTypes = {
+  /**
+   * Is visible when Table.isMaster prop is set to true.
+   */
   isMaster: PropTypes.bool,
 };
 
 Td.defaultProps = {
-  // Is visible in master-detail view.
   isMaster: false,
 };
 

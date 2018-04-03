@@ -1,12 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactToggle from 'react-toggle';
 
 const Toggle = (props) => {
-  const {
-    children,
-    ...rest
-  } = props;
-
   const checkedIcon = (
     <i
       className="material-icons"
@@ -38,11 +34,14 @@ const Toggle = (props) => {
         checked: checkedIcon,
         unchecked: uncheckedIcon,
       }}
-      {...rest}
-    >
-      {children}
-    </ReactToggle>
+      {...props}
+    />
   );
+};
+
+Toggle.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func,
 };
 
 export default Toggle;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class DetailButtonClose extends React.Component {
   render() {
@@ -14,5 +15,9 @@ class DetailButtonClose extends React.Component {
     );
   }
 }
+
+DetailButtonClose.propTypes = {
+  onClick: PropTypes.func,
+};
 
 export default DetailButtonClose;

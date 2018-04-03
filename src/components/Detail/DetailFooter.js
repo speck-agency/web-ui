@@ -1,16 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-class DetailFooter extends React.Component {
-  render() {
-    return (
-      <div
-        className={classNames('d-flex flex-0-0-auto', {})}
-      >
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const DetailFooter = (props) => {
+  return (
+    <div
+      className={classNames('DetailFooter d-flex')}
+    >
+      {props.children}
+    </div>
+  );
+};
+
+DetailFooter.propTypes = {
+  children: PropTypes.node,
+};
 
 export default DetailFooter;
